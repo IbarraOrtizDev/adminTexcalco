@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <app-bar></app-bar>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppBar from './components/appBar'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    AppBar
+  },
+  data: () => ({
+    //
+  }),
+  created(){
+    this.$vuetify.theme.themes.dark.primary="#ef6c00ff"
+    this.$vuetify.theme.themes.dark.secondary="#4d4d4d"
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
